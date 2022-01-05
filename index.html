@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+  <title>COV-19 Madeira Dashboard</title>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta charset="utf-8">  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+
+    html {
+      font-size: 1.2rem;
+      scroll-behavior: smooth;
+    }
+
+    .anchor {
+        display: block;
+        position: relative;
+        top: -70px;
+        visibility: hidden;
+    }
+
+    @media (min-width: 1200px) {
+        .container-lg {
+            max-width: 987px;
+        }
+    }
+
+  @media (max-width: 987px) {
+
+    .btn {
+      font-size: 1.4rem;
+    }
+
+    .menu-extras {
+      display: none;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+
+    iframe {
+      width: 887px;
+      transform: scaleX(0.92);
+      margin-left: -50px;
+      margin-top: -20px;
+      margin-right: 40px;
+      margin-bottom: -40px;
+    }
+
+    html {
+      font-size: 2.2rem;
+      line-height: 2.4rem;
+    }
+
+    }
+
+  </style>
+
+</head>
+<body class="bg-light">
+
+<div class="mt-4 anchor" id="top"></div>
+
+<div class="container-lg">
+
+    <div class="mt-5">
+
+        <h1 class="title">
+            COV-19 Madeira Dashboard
+        </h1>
+
+    <div class="mt-3">
+
+    <nav class="navbar sticky-top navbar-light bg-white justify-content-between shadow-sm rounded-2 p-2 gap-2">
+
+                <div>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Incidence
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#incidence">Daily Incidence</a></li>
+                    <li><a class="dropdown-item" href="#incidence-trend">Incidence Trend</a></li>
+                    <li><a class="dropdown-item" href="#incidence-combined">Correlation Incidence + Trend</a></li>
+                  </ul>
+                </div>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cases
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#cases">Daily Cases</a></li>
+                    <li><a class="dropdown-item" href="#cases-weekday">Cases per Weekday</a></li>
+                    <li><a class="dropdown-item" href="#cases-correlation">Correlation Cases + Importados</a></li>
+                  </ul>
+                </div>
+
+            </div>
+            <div>
+
+                <a role="button" class="btn btn-light menu-extras" href="#raw-data">Data</a>
+                <a role="button" class="btn btn-light menu-extras" href="#sources">Sources</a>
+                <a role="button" class="btn btn-light" href="https://docs.google.com/spreadsheets/d/1c-aotGneDHbeYJo58EheBbuz3TCENobpTQSxL2BgN5w/edit#rangeid=843765021" target="_blank">Edit data ↗</a>
+
+            </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="mt-3 anchor" id="incidence"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Incidence</h4>
+            <p class="card-subtitle mb-2 text-muted">Cases per 100k inhabitants in 7 days</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=1126263609&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="incidence-trend"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Incidence trend</h4>
+            <p class="card-subtitle mb-2 text-muted">Daily incidence difference to previous day, accumulated on 7 day average</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=1441411042&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="incidence-combined"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Incidence trend & Incidence</h4>
+            <p class="card-subtitle mb-2 text-muted">Daily incidence difference to previous day, accumulated on 7 day average + <br> cases per 100k inhabitants in 7 days</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=314813872&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="cases"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Cases</h4>
+            <p class="card-subtitle mb-2 text-muted">Daily cases, red marks imported cases</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=584218417&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="cases-weekday"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Cases per weekday</h4>
+            <p class="card-subtitle mb-2 text-muted">Total cases per weekday, accumulated since 23.03.2021</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=345633630&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="cases-correlation"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Correlation of Cases and »Importados«</h4>
+            <p class="card-subtitle mb-2 text-muted">Positive R (0 to 1,0) shows cases grew correlating with »importados«, negative R (0 to -1,0) shows a contrasting growth for cases and »importados«, accumulated over 1 month</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="360px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=1480457259&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="raw-data"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Raw Cases and »Importados«</h4>
+            <p class="card-subtitle mb-2 text-muted">Raw data points accumulated since 23.03.2021, other data points such as Incidence, Trend and Correlations calculated in Google Sheets document, see <a href="/#sources" class="text-decoration-none">Sources</a></p>
+
+            <div class="card">
+              <div class="card-body">
+                <div>
+                    <iframe height="371px" width="100%" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo44X1iGKw99GB7Gq8ziADkyY1Fb_WOd4Pu_biShAX1LLTlQrq-EYMOlH8lccwUzKPqn8CDTxiZFIM/pubchart?oid=2025020895&amp;format=interactive"></iframe>
+                </div>
+              </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="mt-4 anchor" id="sources"></div>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4 class="card-title">Sources</h4>
+
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text"><strong>Daily case updates</strong> derived from “Epidemiological Situation of COVID-19 in RAM” updates, provided by the Regional Directorate of Health of Madeira. <span class="text-muted">Actualizações diárias de casos e casos importados derivados de actualizações da Situação Epidemiológica da COVID-19 na RAM, fornecidas pela Direção Regional da Saúde</span>.</p>
+                <a href="https://covidmadeira.pt/noticias/" class="btn btn-primary">Go to covidmadeira.pt ↗</a>
+              </div>
+            </div>
+
+            <div class="card mt-3">
+              <div class="card-body">
+                <p class="card-text"><strong>Incidence calculation</strong> based on population of 253,923 inhabitants, derived from the National Institute of Statistics of Portugal. <span class="text-muted">Cálculo da incidência com base na população de 253.923 habitantes, derivado do Instituto Nacional de Estatística de Portugal.</span>.</p>
+                <a href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&contecto=pi&indOcorrCod=0008273&selTab=tab0" class="btn btn-primary" target="_blank">Go to ine.pt ↗</a>
+              </div>
+            </div>
+
+        <div class="card mt-3">
+              <div class="card-body">
+                <p class="card-text"><strong>Other calculations</strong> combined in Google Sheets document <code>Madeira’s COV19 Dashboard</code>.</p>
+                <a href="https://docs.google.com/spreadsheets/d/1c-aotGneDHbeYJo58EheBbuz3TCENobpTQSxL2BgN5w/edit#rangeid=843765021" class="btn btn-primary">Go to Google Sheets ↗</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+
+        <div class="m-4">
+            <a href="https://malte-voelkner.de/imprint" class="text-muted text-decoration-none">Imprint</a>
+        </div>
+
+    <div class="mt-4">
+
+    </div>
+
+</div>
+</body>
+</html>
